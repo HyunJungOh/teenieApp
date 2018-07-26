@@ -7,6 +7,9 @@
     <header>
             <% include ./partials/_header %>
     </header>
+    <% if(username) {%>
+    <h1>Hello, <%= username%>!!!!!!!!</h1>
+    <% }%> 
     <!— Add your EJS code here —>
     <% for (var key in urls){ %>
         <p><%= urls[key] %> - <%= key%>

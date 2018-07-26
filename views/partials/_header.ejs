@@ -1,2 +1,29 @@
 <!— views/partials/_header.ejs —>
 <h3>Teenie Weenie App!</h3>
+
+<% if (!username) { %>
+<h4>Login</h4>
+    <form method="POST" action="/login">
+        <table>
+        <tr>
+            <th><label for="userName">User Name</label></th>
+            <td>
+            <input type="text" id="userName" name="userName" placeholder="" value="">
+            </td>
+        </tr>
+<!--
+        <tr>
+            <th><label for="password">Password</label></th>
+            <td>
+                <input type="password" id="password" name="password" placeholder="" value="">
+            </td>
+        </tr>
+-->
+        </table>
+        <button type="submit">login</button>
+    </form>
+    <% } else {%>
+    <form method="POST" action="/logout">
+        <button type="submit">logout</button>
+    </form>
+    <% }%>
